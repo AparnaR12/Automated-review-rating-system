@@ -1,0 +1,76 @@
+body {
+    background-color: #0b0b0b;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+input[type=text] {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #0078ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005fd1;
+}
+
+.results {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* This is the key part — makes Model A and B horizontal */
+.model {
+    display: flex;
+    justify-content: center;       /* Centers horizontally */
+    align-items: stretch;          /* Keeps same height */
+    gap: 40px;                     /* Space between Model A and B */
+    margin-top: 25px;
+    flex-wrap: nowrap;             /* Prevents stacking */
+}
+
+.model-a, .model-b {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 260px;                  /* Controls box width */
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.model-a:hover, .model-b:hover {
+    transform: scale(1.05);
+}
+
+.model-a {
+    border-top: 4px solid #00c8ff;   /* Blue accent for Balanced */
+}
+
+.model-b {
+    border-top: 4px solid #ff9f00;   /* Orange accent for Imbalanced */
+}

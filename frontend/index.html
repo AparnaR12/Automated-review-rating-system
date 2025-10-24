@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Sentiment Testing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>REVIEW SENTIMENT TESTING</h1>
+
+        <form method="POST">
+            <label>Enter the product review:</label>
+            <input type="text" name="review" value="{{ review_text }}" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_a is not none %}
+        <div class="results">
+            <h2>Prediction Results</h2>
+            <div class="model">
+                <div class="model-a">
+                    <h3>Model A (Balanced)</h3>
+                    <p>Predicted Rating: {{ prediction_a }}</p>
+                </div>
+                <div class="model-b">
+                    <h3>Model B (Imbalanced)</h3>
+                    <p>Predicted Rating: {{ prediction_b }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
